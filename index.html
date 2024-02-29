@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="content">
+
+      <h1>The Planets</h1>
+      <nav>
+        <div class="container">
+
+          <ul class="nav-link">
+            <li><button href="#none">Mercury</button></li>
+            <li><button href="#none">Venus</button></li>
+            <li><button href="#none">Earth</button></li>
+            <li><button href="#none">Mars</button></li>
+            <li><button href="#none">Jupiter</button></li>
+            <li><button href="#none">Saturn</button></li>
+            <li><button href="#none">Uranus</button></li>
+            <li><button href="#none">Neptune</button></li>
+          </ul>
+        </div>
+        <div class="navigation__background"></div>
+        <button class="hamburger">
+          <img src="assets/icon-hamburger.svg" class="open" alt="">
+          <img src="assets/icon-close.svg" class="close" alt="">
+        </button>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <article class="planet__details">
+      <img src="assets/planet-earth.svg" alt="" class="planet__image">
+      <div class="planet__content">
+        <h2>Earth</h2>
+        <p> Third planet from the Sun and the only known planet to harbor life. About 29.2% of Earth's surface is land with remaining 70.8% is covered with water. Earth's distance from the Sun, physical properties and geological history have allowed life to evolve and thrive.
+        </p>
+        <p><span class="light-text">Source : </span><a href="#none">Wikipedia <img src="assets/icon-source.svg" alt=""/></a></p>
+      </div>
+      <ol class="planet__tabs">
+        <li><button class="active"><span class="number">01</span><span>Overview</span></button></li>
+        <li><button><span class="number">02</span><span>Internal Structure</span></button></li>
+        <li><button><span class="number">03</span><span>Surface Geology</span></button></li>
+      </ol>
+      <footer class="planet__footer">
+        <div class="stats">
+          <div class="stat">
+            <h2 class='stat__name'>Rotation Time</h2>
+            <p class='stat__value'>0.99 Days</p> 
+          </div>
+          <div class="stat">
+            <h2 class='stat__name'>Revolution Time</h2>
+            <p class='stat__value'>365.26 Days</p> 
+          </div>
+          <div class="stat">
+            <h2 class='stat__name'>Radius</h2>
+            <p class='stat__value'>6,371 KM</p> 
+          </div>
+          <div class="stat">
+            <h2 class='stat__name'>Average Temp</h2>
+            <p class='stat__value'>16°c</p> 
+          </div>
+
+        </div>
+      </footer>
+    </article>
+  </main>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">SG</a>.
+  </footer>
+  <script src="./script.js" defer></script>
+</body>
+</html>
