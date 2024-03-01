@@ -42,10 +42,25 @@ body{
     overflow-x: hidden;
     font-family: "League Spartan", sans-serif;
 }
+body.earth header ul button::before{
+    background-color: var(--earth);
+}
+/* body.mercury header ul button::before{
+    background-color: var(--mercury);
+}
+body.venus header ul button::before{
+    background-color: var(--earth);
+}
+body.earth header ul button::before{
+    background-color: var(--earth);
+}
+ */
+
+
+
 header{
-   
-    padding: 2rem;
     border-bottom: 1px solid var(--lightGrey);
+    padding: 1rem;
 }
 .hamburger{
     display: none;
@@ -60,20 +75,36 @@ header{
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-   
+}
+header h1{
+    padding: 2rem 0 ;
 }
 header ul{
     display: flex;
-    gap: 1.4rem;
-   
 }
 header ul button{
     font-size: 1.2rem;
+    padding-inline: 1rem;
+}
+header ul li:last-child button{
+    padding-right: 0;
+}
+header ul button::before{
+    content: '';
+    position: absolute;
+    height: 7px;
+    top: -10px;
+    left: 0;
+}
+button{
+    position: relative;
+}
+button.planet__active::before{
+    width: 100%;
 }
 .planet__details{
     margin-top: 8rem;
     display: grid;
-    grid-template-columns: min-content auto-fit;
     gap: 2rem;
     justify-content: space-evenly;
     padding: 1rem;
@@ -81,10 +112,14 @@ header ul button{
 h1, .planet__content h2,.stat__value{
     font-family: "Antonio", sans-serif;
 }
+.planet__active{
+    font-weight: 700;
+}
 .planet__image{
     grid-row: span 2;
-    max-width: 500px;
+    max-width: 700px;
     width: 100%;
+    display: block;
 }
 .planet__content{
     grid-column: 2/3;
@@ -111,9 +146,11 @@ h1, .planet__content h2,.stat__value{
     grid-column: 2/3;
     grid-row: 2/3;
     display: flex;
-    gap: 1rem;
     flex-direction: column;
     max-width: 400px;
+}
+.planet__tabs li:not(:first-child) {
+    padding-top: 1.5rem;
 }
 .planet__tabs li button{
     padding: 1rem 2rem;
@@ -125,11 +162,17 @@ h1, .planet__content h2,.stat__value{
     font-size: 1rem;
     font-weight: 700;
     color: var(--lightGrey);
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+}
+.planet__tabs li button:hover{
+    color: var(--white);
+}
+.hover{
+    background-color: green;
 }
 .active{
-    background-color: var(--earth);
     color: var(--white) !important;
-    border-color: var(--earth) !important;
 }
 .planet__footer{
     margin:2rem 0;
@@ -182,7 +225,10 @@ h1, .planet__content h2,.stat__value{
 @media (max-width:799px) {
     header{
         position: relative;
-    
+        padding: 2rem;
+    }
+    header h1{
+        padding: 0;
     }
     .container{
         height: 100vh;
@@ -212,8 +258,11 @@ h1, .planet__content h2,.stat__value{
         width: 100%;
         z-index: 999;
     }
+    .nav-link  button{
+        padding: 1rem 0;
+    }
     nav.show > .navigation__background{
-        transform:scale(50);
+        transform:scale(2000);
         background-color: var(--black);
     }
     nav.show > .container{
@@ -265,15 +314,20 @@ h1, .planet__content h2,.stat__value{
         height: 1px;
         background-color: var(--lightGrey);
     }
-    
+    .planet__tabs li:not(:first-child) {
+        padding-top:0;
+    }
     .planet__tabs li button{
         border: none;
         padding: 0;
         font-size: 0.9rem;
         padding-bottom: 0.5rem;
     }
-    .active{
+    .planet__tabs li button:hover{
         background-color: transparent;
+    }
+    .active{
+        background-color: transparent !important;
     }
     .planet__image{
         grid-column: 1/2;

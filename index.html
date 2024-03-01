@@ -21,14 +21,14 @@
         <div class="container">
 
           <ul class="nav-link">
-            <li><button href="#none">Mercury</button></li>
-            <li><button href="#none">Venus</button></li>
-            <li><button href="#none">Earth</button></li>
-            <li><button href="#none">Mars</button></li>
-            <li><button href="#none">Jupiter</button></li>
-            <li><button href="#none">Saturn</button></li>
-            <li><button href="#none">Uranus</button></li>
-            <li><button href="#none">Neptune</button></li>
+            <li><button href="#none" id="Mercury">Mercury</button></li>
+            <li><button href="#none" id="Venus">Venus</button></li>
+            <li><button href="#none" id="Earth">Earth</button></li>
+            <li><button href="#none" id="Mars">Mars</button></li>
+            <li><button href="#none" id="Jupiter">Jupiter</button></li>
+            <li><button href="#none" id="Saturn">Saturn</button></li>
+            <li><button href="#none" id="Uranus">Uranus</button></li>
+            <li><button href="#none" id="Neptune">Neptune</button></li>
           </ul>
         </div>
         <div class="navigation__background"></div>
@@ -40,46 +40,48 @@
     </div>
   </header>
   <main>
-    <article class="planet__details">
-      <img src="assets/planet-earth.svg" alt="" class="planet__image">
-      <div class="planet__content">
-        <h2>Earth</h2>
-        <p> Third planet from the Sun and the only known planet to harbor life. About 29.2% of Earth's surface is land with remaining 70.8% is covered with water. Earth's distance from the Sun, physical properties and geological history have allowed life to evolve and thrive.
-        </p>
-        <p><span class="light-text">Source : </span><a href="#none">Wikipedia <img src="assets/icon-source.svg" alt=""/></a></p>
-      </div>
-      <ol class="planet__tabs">
-        <li><button class="active"><span class="number">01</span><span>Overview</span></button></li>
-        <li><button><span class="number">02</span><span>Internal Structure</span></button></li>
-        <li><button><span class="number">03</span><span>Surface Geology</span></button></li>
-      </ol>
-      <footer class="planet__footer">
-        <div class="stats">
-          <div class="stat">
-            <h2 class='stat__name'>Rotation Time</h2>
-            <p class='stat__value'>0.99 Days</p> 
-          </div>
-          <div class="stat">
-            <h2 class='stat__name'>Revolution Time</h2>
-            <p class='stat__value'>365.26 Days</p> 
-          </div>
-          <div class="stat">
-            <h2 class='stat__name'>Radius</h2>
-            <p class='stat__value'>6,371 KM</p> 
-          </div>
-          <div class="stat">
-            <h2 class='stat__name'>Average Temp</h2>
-            <p class='stat__value'>16°c</p> 
-          </div>
-
-        </div>
-      </footer>
-    </article>
+  
   </main>
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">SG</a>.
   </footer>
+  <template id="planetTemplate">
+    <article class="planet__details">
+      <img src="" alt="" class="planet__image">
+      <div class="planet__content">
+        <h2 class="planet__name"></h2>
+        <p class="planet__description">     </p>
+        <p><span class="light-text">Source : </span><a class="planet__sourceLink">Wikipedia <img src="assets/icon-source.svg" alt=""/></a></p>
+      </div>
+      <ol class="planet__tabs">
+        <li   id="overview"><button class="active" ><span class="number">01</span><span>Overview</span></button></li>
+        <li id="structure"><button   ><span class="number">02</span><span>Internal Structure</span></button></li>
+        <li id="geology"><button ><span class="number">03</span><span>Surface Geology</span></button></li>
+      </ol>
+      <footer class="planet__footer">
+        <div class="stats">
+          <div class="stat">
+            <h2 class='stat__name'>Rotation Time</h2>
+            <p class='stat__value rotationValue'></p> 
+          </div>
+          <div class="stat">
+            <h2 class='stat__name'>Revolution Time</h2>
+            <p class='stat__value revolutionValue'></p> 
+          </div>
+          <div class="stat">
+            <h2 class='stat__name'>Radius</h2>
+            <p class='stat__value radiusValue'></p> 
+          </div>
+          <div class="stat">
+            <h2 class='stat__name'>Average Temp</h2>
+            <p class='stat__value averageValue'></p> 
+          </div>
+
+        </div>
+      </footer>
+    </article>
+  </template>
   <script src="./script.js" defer></script>
 </body>
 </html>
