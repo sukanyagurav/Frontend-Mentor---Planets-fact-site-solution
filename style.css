@@ -208,7 +208,7 @@ h1, .planet__content h2,.stat__value{
 @media (min-width:800px) and (max-width:980px) {
     .planet__details{
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr max-content 1fr;
+        grid-template-rows: 1fr max-content max-content;
     }
     .planet__image{
         grid-column: 1/3;
@@ -265,7 +265,7 @@ h1, .planet__content h2,.stat__value{
         padding: 1rem 0;
     }
     nav.show > .navigation__background{
-        transform:scale(2000);
+        transform:scale(60);
         background-color: var(--black);
     }
     nav.show > .container{
