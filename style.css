@@ -65,6 +65,9 @@ header{
 .hamburger{
     display: none;
 }
+main{
+    overflow-x: hidden;
+}
 .content,main,footer{
     max-width: 1440px;
     width: 100%;
