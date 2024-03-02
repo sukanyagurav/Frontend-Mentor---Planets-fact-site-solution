@@ -577,13 +577,10 @@ h1, .planet__content h2,.stat__value{
         opacity: 1; 
     }
     75%{
-        transform:translateX(70%) translateY(-50%) scale(0.5);
+        transform:translateX(70%) translateY(-40%) scale(0.5);
         opacity: 1; 
     }
-    90%{
-        transform:translateX(30%) translateY(-80%) scale(0.7);
-        opacity: 1; 
-    }
+
     100% {
       transform: translateX(0) translateY(0) scale(1);
       opacity: 1; 
