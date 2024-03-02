@@ -42,32 +42,53 @@ body{
     overflow-x: hidden;
     font-family: "League Spartan", sans-serif;
     position: relative;
+    display: grid;
+    grid-template-rows: 130px 1fr 50px;
+    min-height: 100vh;
+    transition: all 0.5s ease-in;
+}
+main{
+    grid-row: 2/3;
+   
+}
 
+.welcome-text{
+    text-align: center;
+    margin-top: 7rem;
+    font-size: 3rem;
 }
 /* header  */
 body.earth header ul button::before{
     background-color: var(--earth);
+    transition: all 0.5s ease-in;
 }
 body.mercury header ul button::before{
     background-color: var(--mercury);
+    transition: all 0.5s ease-in;
 }
 body.venus header ul button::before{
     background-color: var(--venus);
+    transition: all 0.5s ease-in;
 }
 body.mars header ul button::before{
     background-color: var(--mars);
+    transition: all 0.5s ease-in;
 }
 body.jupiter header ul button::before{
     background-color: var(--jupiter);
+    transition: all 0.5s ease-in;
 }
 body.saturn header ul button::before{
     background-color: var(--saturn);
+    transition: all 0.5s ease-in;
 }
 body.uranus header ul button::before{
     background-color: var(--uranus);
+    transition: all 0.5s ease-in;
 }
 body.neptune header ul button::before{
     background-color: var(--neptune);
+    transition: all 0.5s ease-in;
 }
 /* tabs hover */
 @media (hover:hover){
@@ -169,6 +190,7 @@ header ul button::before{
     height: 7px;
     top: -60px;
     left: 0;
+   
 }
 button{
     position: relative;
@@ -191,7 +213,7 @@ h1, .planet__content h2,.stat__value{
 }
 .planet__image{
     grid-row: span 2;
-    max-width: 700px;
+    max-width:600px;
     width: 100%;
     display: block;
 }
@@ -240,10 +262,11 @@ h1, .planet__content h2,.stat__value{
     transition: all 0.5s ease-in-out;
     width: 100%;
     box-shadow: var(--white) 0px 5px 15px;
+    
 }
 .planet__tabs li button:hover{
     color: var(--white);
-
+    background-color: transparent;
 }
 .active{
     color: var(--white) !important;
@@ -328,7 +351,6 @@ h1, .planet__content h2,.stat__value{
     .nav-link{
         flex-direction: column;
         position: absolute;
-        /* left:60%; */
         left: 50%;
         top: 50%;
         transform: translate(-50%,-50%);
@@ -337,12 +359,12 @@ h1, .planet__content h2,.stat__value{
         
     }
     .nav-link > li{
-        /* padding: 1rem; */
         width: 100%;
     }
     header ul button::before{
         width: 0;
-        height: 0
+        height: 0;
+
     }
     .nav-link  button{
         padding: 1rem;
@@ -409,6 +431,7 @@ h1, .planet__content h2,.stat__value{
         font-size: 0.9rem;
         padding-bottom: 0.5rem;
         width: 100%;
+        box-shadow: none;
     }
     .planet__tabs li button:hover{
         background-color: transparent;
