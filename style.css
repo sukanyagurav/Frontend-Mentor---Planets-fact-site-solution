@@ -41,23 +41,94 @@ body{
     width: 100%;
     overflow-x: hidden;
     font-family: "League Spartan", sans-serif;
+    position: relative;
+
 }
+/* header  */
 body.earth header ul button::before{
     background-color: var(--earth);
 }
-/* body.mercury header ul button::before{
+body.mercury header ul button::before{
     background-color: var(--mercury);
 }
 body.venus header ul button::before{
-    background-color: var(--earth);
+    background-color: var(--venus);
 }
-body.earth header ul button::before{
-    background-color: var(--earth);
+body.mars header ul button::before{
+    background-color: var(--mars);
 }
- */
-
-
-
+body.jupiter header ul button::before{
+    background-color: var(--jupiter);
+}
+body.saturn header ul button::before{
+    background-color: var(--saturn);
+}
+body.uranus header ul button::before{
+    background-color: var(--uranus);
+}
+body.neptune header ul button::before{
+    background-color: var(--neptune);
+}
+/* tabs hover */
+@media (hover:hover){
+    body.mercury .planet__tabs li button:hover{
+        background-color: var(--mercury);
+     }
+     body.venus .planet__tabs li button:hover{
+        background-color: var(--venus);
+     }
+     body.earth .planet__tabs li button:hover{
+        background-color: var(--earth);
+     }
+     body.mars .planet__tabs li button:hover{
+        background-color: var(--mars);
+     }
+     body.jupiter .planet__tabs li button:hover{
+        background-color: var(--jupiter);
+     }
+     body.saturn .planet__tabs li button:hover{
+        background-color: var(--saturn);
+     }
+     body.uranus .planet__tabs li button:hover{
+        background-color: var(--uranus);
+     }
+     body.neptune .planet__tabs li button:hover{
+        background-color: var(--neptune);
+     }
+}
+body.mercury .planet__sourceLink:hover,body.mercury .planet__sourceLink:visited{
+   color: var(--mercury);
+   border-bottom: 1px solid var(--mercury);
+ }
+ body.venus .planet__sourceLink:hover,body.venus .planet__sourceLink:visited{
+   color: var(--venus);
+   border-bottom: 1px solid var(--venus);
+ }
+ body.earth .planet__sourceLink:hover,body.earth .planet__sourceLink:visited{
+   color: var(--earth);
+   border-bottom: 1px solid var(--earth);
+ }
+ body.mars .planet__sourceLink:hover,body.mars .planet__sourceLink:visited{
+   color: var(--mars);
+   border-bottom: 1px solid var(--mars);
+ }
+ body.jupiter .planet__sourceLink:hover,body.jupiter .planet__sourceLink:visited{
+   color: var(--jupiter);
+   border-bottom: 1px solid var(--jupiter);
+ }
+ body.saturn .planet__sourceLink:hover,body.saturn .planet__sourceLink:visited{
+   color: var(--saturn);
+   border-bottom: 1px solid var(--saturn);
+ }
+ body.uranus .planet__sourceLink:hover,body.uranus .planet__sourceLink:visited{
+   color: var(--uranus);
+   border-bottom: 1px solid var(--uranus);
+ }
+ body.neptune .planet__sourceLink:hover,body.neptune .planet__sourceLink:visited{
+    color: var(--neptune);
+    border-bottom: 1px solid var(--neptune);
+ }
+/* styles */
 header{
     border-bottom: 1px solid var(--lightGrey);
     padding: 1rem;
@@ -96,7 +167,7 @@ header ul button::before{
     content: '';
     position: absolute;
     height: 7px;
-    top: -10px;
+    top: -60px;
     left: 0;
 }
 button{
@@ -151,9 +222,10 @@ h1, .planet__content h2,.stat__value{
     display: flex;
     flex-direction: column;
     max-width: 400px;
+    justify-content: space-between;
 }
-.planet__tabs li:not(:first-child) {
-    padding-top: 1.5rem;
+.planet__tabs li:nth-child(2){
+    margin: 2rem 0;
 }
 .planet__tabs li button{
     padding: 1rem 2rem;
@@ -167,12 +239,11 @@ h1, .planet__content h2,.stat__value{
     color: var(--lightGrey);
     transition: all 0.5s ease-in-out;
     width: 100%;
+    box-shadow: var(--white) 0px 5px 15px;
 }
 .planet__tabs li button:hover{
     color: var(--white);
-}
-.hover{
-    background-color: green;
+
 }
 .active{
     color: var(--white) !important;
@@ -189,6 +260,7 @@ h1, .planet__content h2,.stat__value{
 .stats > .stat{
     border: 1px solid var(--lightGrey);
     padding: 2rem 1.2rem;
+    box-shadow: var(--white) 0px 5px 15px;
 }
 .stats h2{
     font-size:0.9rem;
@@ -226,6 +298,7 @@ h1, .planet__content h2,.stat__value{
     }
 }
 @media (max-width:799px) {
+    
     header{
         position: relative;
         padding: 2rem;
@@ -255,14 +328,27 @@ h1, .planet__content h2,.stat__value{
     .nav-link{
         flex-direction: column;
         position: absolute;
-        left:60%;
+        /* left:60%; */
+        left: 50%;
         top: 50%;
         transform: translate(-50%,-50%);
         width: 100%;
         z-index: 999;
+        
+    }
+    .nav-link > li{
+        /* padding: 1rem; */
+        width: 100%;
+    }
+    header ul button::before{
+        width: 0;
+        height: 0
     }
     .nav-link  button{
-        padding: 1rem 0;
+        padding: 1rem;
+        width: 100%;
+        text-align: left;
+        transition: all 0.5s ease-in;
     }
     nav.show > .navigation__background{
         transform:scale(60);
@@ -317,20 +403,15 @@ h1, .planet__content h2,.stat__value{
         height: 1px;
         background-color: var(--lightGrey);
     }
-    .planet__tabs li:not(:first-child) {
-        padding-top:0;
-    }
     .planet__tabs li button{
         border: none;
         padding: 0;
         font-size: 0.9rem;
         padding-bottom: 0.5rem;
+        width: 100%;
     }
     .planet__tabs li button:hover{
         background-color: transparent;
-    }
-    .active{
-        background-color: transparent !important;
     }
     .planet__image{
         grid-column: 1/2;
@@ -346,11 +427,76 @@ h1, .planet__content h2,.stat__value{
     .number{
         display: none;
     }
-    .active{
-        border-bottom: 5px solid var(--earth) !important;
-    }
     .planet__footer{
         grid-column: 1/2;
         grid-row:4/5 ;
     }
+    body.earth header li button.planet__active{
+        background-color: var(--earth);
+    }
+    body.mercury header li button.planet__active{
+        background-color: var(--mercury);
+    }
+    body.venus header li button.planet__active{
+        background-color: var(--venus);
+    }
+    body.mars header li button.planet__active{
+        background-color: var(--mars);
+    }
+    body.jupiter header li button.planet__active{
+        background-color: var(--jupiter);
+    }
+    body.saturn header li button.planet__active{
+        background-color: var(--saturn);
+    }
+    body.uranus header li button.planet__active{
+        background-color: var(--uranus);
+    }
+    body.neptune header li button.planet__active{
+        background-color: var(--neptune);
+    }
+}
+@media (hover:none) {
+    body.mercury .active{
+        background-color: transparent !important;
+        border-bottom: 5px solid var(--mercury) !important;
+     }
+     body.venus .active{
+        background-color: transparent !important;
+        border-bottom: 5px solid var(--venus) !important;
+     }
+     body.earth .active{
+        background-color: transparent !important;
+        border-bottom: 5px solid var(--earth) !important;
+     }
+     body.mars .active{
+        background-color: transparent !important;
+        border-bottom: 5px solid var(--mars) !important;
+     }
+     body.jupiter .active{
+        background-color: transparent !important;
+        border-bottom: 5px solid var(--jupiter) !important;
+     }
+     body.saturn .active{
+        background-color: transparent !important;
+        border-bottom: 5px solid var(--saturn) !important;
+     }
+     body.uranus .active{
+        background-color: transparent !important;
+        border-bottom: 5px solid var(--uranus) !important;
+     }
+     body.neptune .active{
+        background-color: transparent !important;
+        border-bottom: 5px solid var(--neptune) !important;
+     }
+}
+
+#myVideo{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height:100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
