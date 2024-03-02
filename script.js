@@ -4,6 +4,7 @@ const nav__link = document.querySelector('.nav-link')
 const planetTemplate = document.getElementById('planetTemplate')
 const main = document.querySelector('main')
 let planetData;
+let timer;
 btn.addEventListener('click',function(){
     if(nav.classList.contains('show')){
         nav.classList.remove('show')
@@ -113,9 +114,10 @@ function internalTab(planetImage,planetDescription,planetSourceLink,data,image){
         planetDescription.classList.remove('bottom-animation')
     }
     if(planetImage.classList.contains('zoom-in')){
+        clearTimeout(timer)
         planetImage.classList.remove('zoom-in')
     }
-    setTimeout(()=>{
+    timer =setTimeout(()=>{
         planetDescription.classList.add('bottom-animation')
         planetImage.classList.add('zoom-in')
         planetImage.src=image
