@@ -285,6 +285,7 @@ h1, .planet__content h2,.stat__value{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
     gap: 1.5rem;
+    text-transform: uppercase;
 }
 .stats > .stat{
     border: 1px solid var(--lightGrey);
@@ -295,7 +296,6 @@ h1, .planet__content h2,.stat__value{
 }
 .stats h2{
     font-size:0.9rem;
-    text-transform: uppercase;
     margin-bottom: 1rem;
     color: var(--lightGrey);
 }
