@@ -21,6 +21,7 @@
     --uranus: rgb(30, 193, 162);
     --neptune: rgb(45, 104, 240);
 }
+
 button{
     font-family: inherit;
     cursor: pointer;
@@ -47,15 +48,15 @@ body{
     min-height: 100vh;
     transition: all 0.5s ease-in;
 }
-main{
-    grid-row: 2/3;
-   
-}
-
 .welcome-text{
     text-align: center;
     margin-top: 7rem;
     font-size: 3rem;
+    opacity: 0;
+  filter: blur(4px);
+  z-index: -1;
+  position: relative;
+    animation: fade-in 1.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
 /* header  */
 body.earth header ul button::before{
@@ -169,21 +170,21 @@ main{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
+    /* gap: 1rem; */
 }
 header h1{
     padding: 2rem 0 ;
+    text-shadow: 0 0 20px #ffffff6a, 0 0 30px #ff4da628;
 }
 header ul{
     display: flex;
+    padding-inline: 1rem;
 }
 header ul button{
     font-size: 1.2rem;
-    padding-inline: 1rem;
+    padding-inline: 0.8rem;
 }
-header ul li:last-child button{
-    padding-right: 0;
-}
+
 header ul button::before{
     content: '';
     position: absolute;
@@ -215,10 +216,15 @@ h1, .planet__content h2,.stat__value{
     grid-row: span 2;
     max-width:600px;
     width: 100%;
+    margin-inline: auto;
     display: block;
+    filter: drop-shadow(4px 5px 29px #ffffffc3);
+    height: 100%;
+
 }
 .planet__content{
     grid-column: 2/3;
+    grid-row: 1/2;
     max-width: 400px;
 }
 .planet__content h2{
@@ -262,7 +268,7 @@ h1, .planet__content h2,.stat__value{
     transition: all 0.5s ease-in-out;
     width: 100%;
     box-shadow: var(--white) 0px 5px 15px;
-    
+
 }
 .planet__tabs li button:hover{
     color: var(--white);
@@ -284,6 +290,8 @@ h1, .planet__content h2,.stat__value{
     border: 1px solid var(--lightGrey);
     padding: 2rem 1.2rem;
     box-shadow: var(--white) 0px 5px 15px;
+   
+
 }
 .stats h2{
     font-size:0.9rem;
@@ -522,4 +530,58 @@ h1, .planet__content h2,.stat__value{
     width: 100%;
     object-fit: cover;
     z-index: -1;
+}
+@keyframes fade-in {
+    100% {
+      opacity: 1;
+      filter: blur(0);
+    }
+}
+.textAnimation {
+    animation: text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+    -webkit-animation: text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both; 
+}
+@keyframes text-clip {
+    from {
+      clip-path: polygon(0% 0%, 0 100%, 0 100%, 0% 0%); }
+    to {
+      clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0%); } 
+}
+.bottom-animation {
+    animation: fromBottom 0.8s ease-in;
+    -webkit-animation: fromBottom 0.8s ease-in;
+}@keyframes fromBottom {
+    0% {
+      transform: translateY(20%);
+      opacity: 0; 
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1; 
+    } 
+}
+.zoom-in{
+
+    animation: zoomIn 0.8s ease-in;
+    transform-origin: left top;
+    -webkit-animation: zoomIn 0.8s ease-in;
+}
+
+@keyframes zoomIn {
+    0% {
+      transform:translateX(30%) translateY(20%) scale(0);
+      opacity: 0; 
+    }
+    50%{
+        transform:translateX(50%) translateY(70%) scale(0.4);
+        opacity: 1; 
+    }
+    75%{
+        transform:translateX(70%) translateY(-50%) scale(0.5);
+        opacity: 1; 
+    }
+    100% {
+      transform: translateX(0) translateY(0) scale(1);
+      opacity: 1; 
+    } 
 }

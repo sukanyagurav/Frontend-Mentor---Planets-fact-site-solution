@@ -40,13 +40,15 @@ function renderData(planet){
     const templateEle= document.importNode(planetTemplate.content,true) 
     const planetName = templateEle.querySelector('.planet__name')
     planetName.innerHTML = planet.name
+    planetName.setAttribute('class','textAnimation')
     planetName.style.color = color
     const planetImage = templateEle.querySelector('.planet__image')
     planetImage.src=planet.images.planet
+    planetImage.className+=' zoom-in'
     templateEle.querySelector('.active').style.backgroundColor= color
     const planetDescription = templateEle.querySelector('.planet__description')
     planetDescription.innerHTML = planet.overview.content
-   
+    planetDescription.className+=' bottom-animation'
     document.documentElement.style.setProperty('--color-font-general', '#000')
 
     const planetSourceLink = templateEle.querySelector('.planet__sourceLink')
@@ -57,11 +59,16 @@ function renderData(planet){
 
     const revolutionValue = templateEle.querySelector('.revolutionValue')
     revolutionValue.innerHTML = planet.revolution
+ 
 
     const radiusValue = templateEle.querySelector('.radiusValue')
     radiusValue.innerHTML = planet.radius
+
+
     const averageValue = templateEle.querySelector('.averageValue')
     averageValue.innerHTML = planet.temperature
+
+
     const tabs = templateEle.querySelector('.planet__tabs')
 
     const overview = templateEle.querySelector('#overview')
@@ -96,13 +103,26 @@ function removeAllActiveClassess(allTabs){
         if(tab.classList.contains('active')){
             tab.style.backgroundColor=''
             tab.classList.remove('active')
-        }
+        } 
+
     })
+
 }  
 function internalTab(planetImage,planetDescription,planetSourceLink,data,image){
-    planetImage.src=image
-    planetDescription.innerHTML = data.content
-    planetSourceLink.href = data.source
+    if(planetDescription.classList.contains('bottom-animation')){
+        planetDescription.classList.remove('bottom-animation')
+    }
+    if(planetImage.classList.contains('zoom-in')){
+        planetImage.classList.remove('zoom-in')
+    }
+    setTimeout(()=>{
+        planetDescription.classList.add('bottom-animation')
+        planetImage.classList.add('zoom-in')
+        planetImage.src=image
+        planetDescription.innerHTML = data.content
+        planetSourceLink.href = data.source
+    },500)
+   
 }
 nav__link.addEventListener('click',function(e){
     const links = nav__link.querySelectorAll('button')
