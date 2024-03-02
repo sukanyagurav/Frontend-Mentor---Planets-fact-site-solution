@@ -123,7 +123,7 @@ function internalTab(planetImage,planetDescription,planetSourceLink,data,image){
         planetImage.src=image
         planetDescription.innerHTML = data.content
         planetSourceLink.href = data.source
-    },500)
+    },300)
    
 }
 nav__link.addEventListener('click',function(e){

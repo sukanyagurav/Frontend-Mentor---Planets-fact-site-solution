@@ -447,7 +447,7 @@ h1, .planet__content h2,.stat__value{
     .planet__image{
         grid-column: 1/2;
         grid-row: 2/3;
-        
+        height: auto;
     }
     .planet__content{
         grid-column: 1/2;
